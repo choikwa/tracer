@@ -29,8 +29,7 @@ with open(filename) as f_in:
           bnum+=1
           newf+=marker('entr', depth, bnum) 
         elif ch == '}':
-          if not ifFirstWordIsIn(chunk[i+1:], ['else', 'catch']):
-            newf= newf[:-1] + marker('exit', depth, bnum) + '}'
+          newf= newf[:-1] + marker('exit', depth, bnum) + '}'
           depth-=1
         elif ch == '/':
           nchar = chunk[i+1]
